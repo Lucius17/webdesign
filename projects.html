@@ -3,13 +3,22 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Galeria z grafikami</title>
 		<link
 			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+			integrity="sha512-..."
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta2/css/bootstrap.min.css"
+			integrity="sha512-..."
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>Project Gallery</title>
 	</head>
-
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 			<div class="container">
@@ -47,75 +56,94 @@
 			</div>
 		</nav>
 		<br /><br /><br /><br /><br />
-		<div class="container">
-			<h1 class="text-center mt-5">Galeria z grafikami</h1>
-			<div class="row mt-4">
-				<div class="col-md-4">
-					<img
-						src="obrazek1.jpg"
-						class="img-fluid img-thumbnail"
-						alt="Obrazek 1"
-						data-bs-toggle="modal"
-						data-bs-target="#exampleModal"
-					/>
-				</div>
-				<div class="col-md-4">
-					<img
-						src="obrazek2.jpg"
-						class="img-fluid img-thumbnail"
-						alt="Obrazek 2"
-						data-bs-toggle="modal"
-						data-bs-target="#exampleModal"
-					/>
-				</div>
-				<div class="col-md-4">
-					<img
-						src="./img/101508108-flappy_bird.jpg"
-						class="img-fluid img-thumbnail"
-						alt="Obrazek 3"
-						data-bs-toggle="modal"
-						data-bs-target="#exampleModal"
-					/>
-				</div>
-			</div>
-		</div>
 
-		<div
-			class="modal fade"
-			id="exampleModal"
-			tabindex="-1"
-			role="dialog"
-			aria-labelledby="exampleModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body">
+		<div class="container mt-5">
+			<h1 style="text-align: center">Galeria z projektami</h1>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
 						<img
-							src=""
-							class="img-fluid"
-							alt="Powiększony obrazek"
-							id="modalImage"
+							src="./img/101508108-flappy_bird.jpg"
+							class="card-img-top"
+							alt="Flappy Bird AI"
 						/>
+						<div class="card-body">
+							<h5 class="card-title">Flappy Bird AI</h5>
+							<p class="card-text">
+								Flappy Bird AI jest programem, który został stworzony w celu
+								nauczenia się gry w popularną grę Flappy Bird przy użyciu
+								techniki uczenia ze wzmocnieniem znaną jako Q-learning. Jest to
+								zaawansowana forma sztucznej inteligencji, która ma zdolność do
+								uczenia się i doskonalenia swoich umiejętności poprzez
+								interakcję z otoczeniem.
+							</p>
+							<button
+								type="button"
+								class="btn btn-secondary"
+								onclick="window.location.href = 'https://github.com/Lucius17/Flappy-Bird'"
+							>
+								Link Do projektu
+								<i class="fab fa-github fa-2x" style="color: #ffffff"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img src="./img/AI.png" class="card-img-top" alt="AI Chat" />
+						<div class="card-body">
+							<h5 class="card-title">AI Chat</h5>
+							<p class="card-text">
+								ChatAI to zaawansowana aplikacja oparta na sztucznej
+								inteligencji, która umożliwia interakcję i prowadzenie
+								konwersacji z wirtualnym asystentem. Dzięki wykorzystaniu
+								najnowszych osiągnięć w dziedzinie przetwarzania języka
+								naturalnego, ChatAI oferuje użytkownikom realistyczne i
+								intuicyjne doświadczenia rozmowy.
+							</p>
+							<button
+								type="button"
+								class="btn btn-secondary"
+								onclick="window.location.href = 'placeholder.html'"
+							>
+								Link Do projektu
+								<i class="fab fa-github fa-2x" style="color: #ffffff"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img src="./img/eco_shop.png" class="card-img-top" alt="Eco Shop" />
+						<div class="card-body">
+							<h5 class="card-title">Eco Shop</h5>
+							<p class="card-text">
+								Eco Shop to platforma internetowa, która zapewnia użytkownikom
+								szeroki wybór ekologicznych produktów w jednym miejscu. Strona
+								ta ma na celu promowanie i ułatwianie dostępu do produktów
+								przyjaznych dla środowiska, umożliwiając użytkownikom
+								podejmowanie bardziej świadomych i ekologicznych decyzji
+								zakupowych.
+							</p>
+							<button
+								type="button"
+								class="btn btn-secondary"
+								onclick="window.location.href = 'placeholder.html'"
+							>
+								Link Do projektu
+								<i class="fab fa-github fa-2x" style="color: #ffffff"></i>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-		<script>
-			var myModal = new bootstrap.Modal(
-				document.getElementById("exampleModal")
-			);
-			var galleryImages = document.querySelectorAll(".img-thumbnail");
-
-			galleryImages.forEach(function (image) {
-				image.addEventListener("click", function () {
-					var src = this.getAttribute("src");
-					document.getElementById("modalImage").setAttribute("src", src);
-					myModal.show();
-				});
-			});
-		</script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js"
+			integrity="sha512-..."
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 	</body>
 </html>
