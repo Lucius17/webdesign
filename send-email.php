@@ -3,14 +3,17 @@ require "vendor/autoload.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
+use Dotenv\Dotenv as Dotenv;
 
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 
 $mail = new PHPMailer(true);
 
-$config = json_decode(file_get_contents('config.json'), true);
-$EmailUsername = $config['EmailUsername'];
-$EmailPassword = $config['EmailPassword'];
+// $config = json_decode(file_get_contents('config.json'), true);
+$EmailUsername = $_ENV['EmailUsername'];
+$EmailPassword = $_ENV['EmailPassword'];
 
 
 $body = $_POST['email'] . "<br><br><br>" . $_POST['message'];
